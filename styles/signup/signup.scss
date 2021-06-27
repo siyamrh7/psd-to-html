@@ -1,0 +1,199 @@
+
+
+$bg_color:#EBEBEB;
+$bg2_color:#F8F8F8;
+$green:#469642;
+$red:#F04E4F;
+@mixin container{
+    max-width: 70vw;
+    height: 100%;
+}
+@mixin sm_container{
+    max-width: 32vw;
+    height: 100%;
+    margin: 2rem auto;
+    align-items: center;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+    .super_container{
+        
+        height: 100vh;
+        margin: auto;
+        .header{
+            background-color: $bg2_color;
+            height: 10%;
+            width: 100vw;
+            
+            .container{
+              
+                margin: 0 auto;
+                @include container;
+                @include flex;
+                .left_nav{
+                    .bd{
+                        color: $red;
+                    }
+                    .crowd{
+                        color: $green;
+                    }
+                }
+                .right_nav{
+                   > a{
+                        text-decoration: none;
+                        color: black;
+                        padding: 0.1rem 1rem;
+                       
+                    }  a:hover,a:active{
+                        text-decoration: underline;
+                        color: $green;
+                    }
+                    button{
+                        color: $bg2_color;
+                        padding: 0.5rem;
+                        background-color: $green;
+                        border: none;
+                        width: 8rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+        .main{
+            background-color: $bg_color;
+            width: 100vw;
+            margin: 1px;
+          
+            .main_container{
+                @include sm_container;
+                .feild{
+
+                    margin: 1rem 0;
+                    height: 75vh;
+                    @include flex;
+                    flex-direction: column;
+                    > *{
+                        margin: 0;
+                        width: 100%;
+                        border: none;
+                        color: grey;
+                    }
+                    input:focus{
+                        outline: none;
+                    }
+                    input{
+                        height: 2rem;
+                        padding: 1rem 0;
+
+                    }
+                    label{
+                        font-size: 0.9rem;
+                        margin-top: 1rem;
+                    }
+                    a{  font-size: 0.8rem;
+                        text-decoration: none;
+                        color:#485098;
+                        margin:1rem;
+                        cursor: pointer;
+                    
+                    }
+                    #btn{
+                        height: 2rem;
+                        background-color: $green;
+                        color: $bg2_color;
+                        cursor: pointer;
+                    }
+                    div{
+
+                        .checkbox{
+                            @include flex;
+                            justify-content: flex-start;
+                            color: grey;
+                            font-size: 0.9rem;
+                            input{
+                                margin-right: 1rem;
+                            }
+                        }
+                    }
+                    .devider{
+                        @include flex;
+                    }
+                    
+                }
+
+                .buttons_feild{
+                    @include flex;
+                    flex-direction: column;
+                    height: 40vh;
+                    justify-content: flex-start;
+                    > *{
+                        width: 100%;
+                        border: none;
+                        text-decoration: none;
+                        font-weight: lighter;
+                        
+                    }
+                    button{
+                        height: 2rem;
+                        margin: 0.5rem 0;
+                        background-color: white;
+                        color:grey;
+                        cursor: pointer;
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                    p{
+                        
+                        font-weight: lighter;
+                        color: grey;
+                    }
+                    .google_btn{
+                        background-color: white;
+                        color: grey;
+                    }
+                    .fb_btn{
+                        background-color: #485098;
+                        color:$bg2_color
+                    }
+                }
+
+
+            }
+        }
+        .footer{
+            background-color: $bg2_color;
+            height: 30%;
+            width: 100vw;
+            margin: 1px;
+        }
+    }
+    @media only screen and (max-width: 1100px) {
+  
+   .right_nav{
+       display: none;
+   }
+      }
+      @media screen and (max-width: 850px) {
+          .main_container{
+              min-width: 60vw;
+          }
+          
+      }
+      @media screen and (max-width: 450px) {
+        .main_container{
+           min-width: 80vw;
+        }
+        .left_nav h1{
+            font-size: 25px;
+        }
+      }
